@@ -22,7 +22,7 @@ namespace DapperRepositoryPattern
         {
             //var db = new SqlConnection(AppConnection.ConnectionString);
             //using IDbConnection db = new SqlConnection(AppConnection.ConnectionString); // using 선언은 C# 8.0 이상에서 사용
-            using IDbConnection connection = AppConnection.Connection;    
+            using IDbConnection connection = AppConnection.GetConnection();    
             var sql = @"select ProductId, ProductName, UnitPrice from Products;";
             return connection.Query<Product>(sql);
         }

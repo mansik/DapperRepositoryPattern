@@ -14,7 +14,7 @@ namespace DapperRepositoryPattern.Models
 
         public GenericRepository()
         {
-            _connection = AppConnection.Connection;
+            _connection = AppConnection.GetConnection();
         }
 
         public bool Add(Product product)
