@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DapperRepositoryPattern
+namespace DapperRepositoryPattern.Models
 {
     internal class AppConnection
     {

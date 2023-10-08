@@ -1,4 +1,4 @@
-﻿namespace DapperRepositoryPattern1
+﻿namespace DapperRepositoryPattern
 {
     partial class Form1
     {

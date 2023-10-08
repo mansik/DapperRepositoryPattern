@@ -1,5 +1,4 @@
 ﻿using Dapper;
-using DapperRepositoryPattern.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,30 +8,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DapperRepositoryPattern
+namespace DapperRepositoryPattern.Models
 {
-    internal class ProductReopsitory : IProductRepository
+    internal class ProductReopsitory : IGenericRepository<Product>
     {
-        public bool Delete(string productId)
+        readonly IDbConnection _connection;
+        public ProductReopsitory()
+        {
+            _connection = AppConnection.GetConnection();
+        }
+
+        public bool Delete(int ID)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Product> GetProducts()
+        public IEnumerable<Product>? GetAll()
         {
-            //var db = new SqlConnection(AppConnection.ConnectionString);
-            //using IDbConnection db = new SqlConnection(AppConnection.ConnectionString); // using 선언은 C# 8.0 이상에서 사용
-            using IDbConnection connection = AppConnection.GetConnection();    
             var sql = @"select ProductId, ProductName, UnitPrice from Products;";
-            return connection.Query<Product>(sql);
+            return _connection.Query<Product>(sql);
         }
 
-        public bool Insert(Product product)
+        public Product? GetById(int ID)
         {
             throw new NotImplementedException();
         }
 
-        public bool Update(Product product)
+        public bool Insert(Product entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Update(Product entity)
         {
             throw new NotImplementedException();
         }

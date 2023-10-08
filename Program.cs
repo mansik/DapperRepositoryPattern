@@ -1,4 +1,4 @@
-﻿using DapperRepositoryPattern1;
+﻿using DapperRepositoryPattern;
 
 namespace DapperRepositoryPattern
 {

@@ -1,11 +1,10 @@
-﻿using DapperRepositoryPattern;
-using DapperRepositoryPattern.Models;
+﻿using DapperRepositoryPattern.Models;
 
-namespace DapperRepositoryPattern1
+namespace DapperRepositoryPattern
 {
     public partial class Form1 : Form
     {
-        IProductRepository? productRepository;
+        ProductReopsitory? productRepository;
         public Form1()
         {
             InitializeComponent();
@@ -14,7 +13,7 @@ namespace DapperRepositoryPattern1
         private void Form1_Load(object sender, EventArgs e)
         {
             productRepository = new ProductReopsitory();
-            dataGridView.DataSource = productRepository.GetProducts();
+            dataGridView.DataSource = productRepository.GetAll();
             lblTotalRecords.Text = $"Total records: {dataGridView.RowCount}";
         }
     }
