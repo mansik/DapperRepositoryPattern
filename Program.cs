@@ -1,6 +1,4 @@
-﻿using DapperRepositoryPattern;
-
-namespace DapperRepositoryPattern
+﻿namespace DapperRepositoryPattern
 {
     internal static class Program
     {
